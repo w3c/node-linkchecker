@@ -1,0 +1,29 @@
+{
+  "name": "node-linkchecker",
+  "version": "0.0.1",
+  "license": "MIT",
+  "description": "Find broken links",
+  "author": "W3C",
+  "contributors": [
+    {
+      "name": "Denis Ah-Kang",
+      "email": "denis@w3.org"
+    }
+  ],
+  "keywords": [
+    "w3c",
+    "broken-links"
+  ],
+  "repository": "git@github.com:deniak/node-linkchecker.git",
+  "bugs": {
+    "url": "https://github.com/deniak/node-linkchecker/issues"
+  },
+  "dependencies": {
+    "resolve-url": "^0.2.1",
+    "superagent": "^1.7.2",
+    "whacko": "^0.19.1"
+  },
+  "bin": {
+    "node-linkchecker": "./node-linkchecker.js"
+  }
+}
