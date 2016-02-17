@@ -97,24 +97,32 @@ function checkFragmentsList(list) {
     fragmentsList[fragmentLessURL].push(link.hash);
   });
 
-  // for (var i in fragmentsList) {
-  //   ua.get(i)
-  //     .set("User-Agent", DEFAULT_OPTIONS.userAgent)
-  //     .on('error', function(err) {
-  //       console.log(err);
-  //     })
-  //     .end(function(err, res) {
-        // var $ = whacko.load(res.text);
-        // fragmentsList[i].forEach(function(id) {
-        //   var escapedId = id.replace( /(\!|\"|\$|\%|\&|\'|\(|\)|\*|\+|\,|\.|\/|\:|\;|\<|\=|\>|\?|\@|\[|\\|\]|\^|\`|\{|\||\}|\~)/g, "\\$1");
-        //   var $tmp = $(escapedId).first()
-        //   if (!$tmp.length) {
-        //     console.log(escapedId + ' doesnt exist in ' + i);
-        //   }
-        // });
-      // });
-  // }
+  var keys = Object.keys(fragmentsList);
+  var processLink = function(index) {
+    if (index !== keys.length) {
+      ua.get(keys[index])
+        .set("User-Agent", DEFAULT_OPTIONS.userAgent)
+        .on('error', function(err) {
+          console.log(err);
+        })
+        .end(function(err, res) {
+          // console.log(i + "    " + fragmentsList[i]);
+          var $ = whacko.load(res.text);
+          fragmentsList[keys[index]].forEach(function(id) {
+            var escapedId = id.replace( /(\!|\"|\$|\%|\&|\'|\(|\)|\*|\+|\,|\.|\/|\:|\;|\<|\=|\>|\?|\@|\[|\\|\]|\^|\`|\{|\||\}|\~)/g, "\\$1");
+            var $tmp = $(escapedId).first();
+            if (!$tmp.length) {
+              console.log(escapedId + ' doesn\'t exist in ' + keys[index]);
+            }
+          });
+          processLink(index + 1);
+        });
+    }
+  }
+
+  processLink(0);
 }
+
 
 ua.get(uri)
 .set("User-Agent", DEFAULT_OPTIONS.userAgent)
