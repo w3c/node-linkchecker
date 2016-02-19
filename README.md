@@ -56,4 +56,4 @@ nlc.check("https://www.w3.org/", options, dumpResult)
 
 * add support for robot exclusions
 * improve result feedback and format
-
+* add tests
