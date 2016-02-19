@@ -9,7 +9,10 @@
     "broken-links"
   ],
   "main": "lib/node-linkchecker",
-  "repository": "git@github.com:deniak/node-linkchecker.git",
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/deniak/node-linkchecker.git"
+  },
   "bugs": {
     "url": "https://github.com/deniak/node-linkchecker/issues"
   },
@@ -19,5 +22,10 @@
     "resolve-url": "^0.2.1",
     "superagent": "^1.7.2",
     "whacko": "^0.19.1"
+  },
+  "homepage": "https://github.com/deniak/node-linkchecker#readme",
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
   }
 }
