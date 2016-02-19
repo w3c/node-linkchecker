@@ -51,3 +51,9 @@ nlc.check("https://www.w3.org/", options, dumpResult)
 | schemes       | an array of schemes you want to check       | `["http:", "https:"]` |
 | userAgent     | the user agent to be used for each request  | `node-linchecker`     |
 | fragments     | whether to look for broken fragments or not | `true`                |
+
+### TODO list
+
+* add support for robot exclusions
+* improve result feedback and format
+
