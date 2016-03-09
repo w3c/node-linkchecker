@@ -57,5 +57,6 @@ nlc.check("https://www.example.org/", options)
 ### TODO list
 
 * add support for robot exclusions
+* handle base `href`
 * improve result feedback and format
 * add tests
