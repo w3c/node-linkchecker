@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/w3c/node-linkchecker.svg?branch=master)](https://travis-ci.org/w3c/node-linkchecker)
+
 # Linkchecker
 
 Detect broken links and broken fragments
