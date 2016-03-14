@@ -30,6 +30,10 @@
   },
   "homepage": "https://github.com/w3c/node-linkchecker#readme",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha -c -G"
+  },
+  "engines": {
+    "node": ">=4.1.2",
+    "npm": ">=3.3.6"
   }
 }

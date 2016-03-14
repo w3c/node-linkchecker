@@ -1,0 +1,9 @@
+sudo: false
+language: node_js
+node_js:
+  - node
+script:
+  - npm test
+notifications:
+  email:
+    - denis@w3.org
