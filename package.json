@@ -1,6 +1,6 @@
 {
   "name": "node-linkchecker",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "license": "MIT",
   "description": "Find broken links and broken fragments",
   "author": "Denis Ah-Kang <denis@w3.org>",
