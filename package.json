@@ -23,8 +23,12 @@
     "superagent": "^1.7.2",
     "whacko": "^0.19.1"
   },
+  "devDependencies": {
+    "chai": "3.5",
+    "mocha": "2.3",
+    "express": "4.13"
+  },
   "homepage": "https://github.com/w3c/node-linkchecker#readme",
-  "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   }
