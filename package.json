@@ -18,10 +18,10 @@
   },
   "dependencies": {
     "chalk": "^1.1.1",
+    "jsdom": "^11.6.0",
     "promise": "^7.1.1",
     "resolve-url": "^0.2.1",
-    "superagent": "^1.7.2",
-    "whacko": "^0.19.1"
+    "superagent": "^1.7.2"
   },
   "devDependencies": {
     "chai": "3.5",
