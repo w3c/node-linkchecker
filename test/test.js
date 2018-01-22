@@ -82,5 +82,14 @@ describe('node-linkchecker', function() {
         });
       });
     });
+    it("should return the proper linkmap", function() {
+      return nlc.linkmap(server.fixtures() + 'brokenLinksValid.html').then(function(res) {
+        const expected = {'assets/foo.css': [],
+                          'assets/w3c_home.png': [],
+                          'brokenLinksValid.html':  ["foo", "foobar"],
+                          'broken.html': ['foo']};
+        expect(res).to.deep.equal(expected);
+      });
+    });
   });
 });

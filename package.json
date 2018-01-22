@@ -18,6 +18,7 @@
   },
   "dependencies": {
     "chalk": "^1.1.1",
+    "content-type": "^1.0.4",
     "jsdom": "^11.6.0",
     "promise": "^7.1.1",
     "resolve-url": "^0.2.1",
