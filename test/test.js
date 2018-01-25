@@ -73,23 +73,21 @@ var tests = [
 describe('node-linkchecker', function() {
   describe('check()', function () {
     it('should be a function', function () {
-      expect(nlc.check).to.be.a('function');
+      expect(nlc.check).to.be.a('asyncfunction');
     })
     tests.forEach(function(test) {
-      it(test.desc, function() {
-        return nlc.check(test.url, test.options).then(function(res) {
-          expect(res).to.deep.equal(test.expected);
-        });
+      it(test.desc, async function() {
+        const res = await nlc.check(test.url, test.options);
+        expect(res).to.deep.equal(test.expected);
       });
     });
-    it("should return the proper linkmap", function() {
-      return nlc.linkmap(server.fixtures() + 'brokenLinksValid.html').then(function(res) {
-        const expected = {'assets/foo.css': [],
-                          'assets/w3c_home.png': [],
-                          'brokenLinksValid.html':  ["foo", "foobar"],
-                          'broken.html': ['foo']};
-        expect(res).to.deep.equal(expected);
-      });
+    it("should return the proper linkmap", async function() {
+      const res = await nlc.linkmap(server.fixtures() + 'brokenLinksValid.html');
+      const expected = {'assets/foo.css': [],
+                        'assets/w3c_home.png': [],
+                        'brokenLinksValid.html':  ["foo", "foobar"],
+                        'broken.html': ['foo']};
+      expect(res).to.deep.equal(expected);
     });
   });
 });
